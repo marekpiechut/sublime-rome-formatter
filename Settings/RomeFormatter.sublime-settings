@@ -1,0 +1,6 @@
+{
+	// Should we format supported files on save
+	"format_on_save": false,
+	// Format on save only if rome.conf file was detected
+	"detect_config": true
+}

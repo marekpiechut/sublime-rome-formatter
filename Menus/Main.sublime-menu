@@ -1,0 +1,23 @@
+[{
+	"id": "edit",
+	"children": [{
+		"command": "rome_format",
+		"caption": "Format with Rome",
+	}, ],
+}, {
+	"id": "preferences",
+	"children": [{
+		"id": "package-settings",
+		"children": [{
+			"caption": "Rome Formatter",
+			"children": [{
+				"caption": "Settings",
+				"command": "edit_settings",
+				"args": {
+					"base_file": "${packages}/RomeFormatter/Settings/RomeFormatter.sublime-settings",
+					"default": "// Settings in here override defaults\",\n{\n\t$0\n}\n"
+				},
+			}, ]
+		}]
+	}]
+}]
