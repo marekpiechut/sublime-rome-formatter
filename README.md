@@ -13,7 +13,6 @@ Open `Edit` menu and select `Format with Rome`. This will format current selecti
 
 ### Pro way
 Open command palette, type `Rome` and select `Rome: Format file or selection`. This will also format current selection, or whole file if nothing is selected.
-Press `ctrl+alt/Option+f` for the same effect.
 
 ### Master way
 Just enable `format_on_save` option and let Rome format every file it can.
@@ -31,7 +30,9 @@ Check out `Settings...` -> `Package Settings` -> `Rome Formatter`:
 
 **detect_config** will traverse up from current file or folder and try to find `rome.json` file. If it finds it, it will allow **format_on_save** to do it's job. If not, meh, nothing will happen.
 
-You can change default keyboard shortcut in your keymap:
+
+## Keyboard shortcut
+You can add a keyboard shortcut in your keymap, ex:
 ```jsonc
 [
 	{"keys": ["ctrl+alt+f"], "command": "rome_format"}
