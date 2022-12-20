@@ -1,6 +1,11 @@
-[
-  {
-    "caption": "Rome: Format file or selection",
-    "command": "rome_format"
-  },
-]
+[{
+  "caption": "Rome: Format file or selection",
+  "command": "rome_format"
+}, {
+  "caption": "Preferences: Rome Formatter",
+  "command": "edit_settings",
+  "args": {
+    "base_file": "${packages}/RomeFormatter/Settings/RomeFormatter.sublime-settings",
+    "default": "// Settings in here override defaults\",\n{\n\t$0\n}\n"
+  }
+}, ]
