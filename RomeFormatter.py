@@ -77,13 +77,17 @@ class RomeFormatCommand(sublime_plugin.TextCommand):
 		file_name = self.extract_file_name()
 		path = self.find_lookup_start_path()
 		binary = find_binary(path)
+		config_file = find_config_file(path)
+		cwd = os.path.dirname(config_file) if config_file else path
+
+		print("CWD", cwd, binary)
 
 		proc = subprocess.Popen(
 			[binary, "format", "--stdin-file-path", file_name ],
 			stdin=subprocess.PIPE,
 			stderr=subprocess.PIPE,
 			stdout=subprocess.PIPE,
-			cwd=path,
+			cwd=cwd,
 		)
 
 		encoding = self.view.encoding()
@@ -109,18 +113,18 @@ class RomeFormatCommand(sublime_plugin.TextCommand):
 				self.view.replace(edit, region, replacement)
 
 
-def check_config_exists(file):
+def find_config_file(file):
 	if not file:
-		return False
+		return None
 
 	parent = path.dirname(path.abspath(file))
 	if parent == file:
-		return False
+		return None
 
 	expected = path.join(parent, 'rome.json')
 
 	if path.exists(expected):
-		return True
+		return expected
 
 	return check_config_exists(parent)
 
@@ -128,7 +132,7 @@ def check_config_exists(file):
 def format_on_save_enabled(file):
 	enabled = settings.get('format_on_save') == True
 	if enabled and settings.get('detect_config') == True:
-		return check_config_exists(file)
+		return bool(find_config_file(file))
 	else:
 		return enabled
 
