@@ -80,8 +80,6 @@ class RomeFormatCommand(sublime_plugin.TextCommand):
 		config_file = find_config_file(path)
 		cwd = os.path.dirname(config_file) if config_file else path
 
-		print("CWD", cwd, binary)
-
 		proc = subprocess.Popen(
 			[binary, "format", "--stdin-file-path", file_name ],
 			stdin=subprocess.PIPE,
