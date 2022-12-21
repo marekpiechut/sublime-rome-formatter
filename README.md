@@ -45,10 +45,8 @@ Open Sublime menu and navigate to :
 `Tools` -> `Command Palette...` -> `Package Control: Install Package`,
 type `Rome Formatter` and select it to complete the installation.
 
-## Dependencies
-**None**
-
-Plugin itself has no dependencies, but you need to have Rome installed:
+## Requirements
+Plugin itself has no dependencies, but **you need to have Rome** installed:
 
 - Install Rome globally via:
 
