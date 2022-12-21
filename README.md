@@ -48,7 +48,7 @@ type `Rome Formatter` and select it to complete the installation.
 ## Dependencies
 **None**
 
-Plugin needs nothing. If you don't have Rome yet installed:
+Plugin itself has no dependencies, but you need to have Rome installed:
 
 - Install Rome globally via:
 
@@ -56,7 +56,7 @@ Plugin needs nothing. If you don't have Rome yet installed:
 npm i -g rome
 ```
 
-- or locally in your project:
+- or locally in your project (**recommended**):
 
 ```bash
 npm i -D rome
