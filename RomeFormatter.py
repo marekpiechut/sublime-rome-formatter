@@ -124,7 +124,7 @@ def find_config_file(file):
 	if path.exists(expected):
 		return expected
 
-	return check_config_exists(parent)
+	return find_config_file(parent)
 
 
 def format_on_save_enabled(file):
