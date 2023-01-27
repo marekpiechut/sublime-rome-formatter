@@ -62,3 +62,12 @@ npm i -D rome
 
 plugin will auto-detect if there's a local binary and use that and fallback
 to global install if nothing was found. So **you can have different Rome versions** for each project.
+
+## Windows
+It looks like on Windows you need to have Visual C++ Redistributable installed, otherwise you will get an error like this:
+
+```bash
+Failed to exec Rome formatter 3221225781 b''
+```
+
+You can download it [here](https://support.microsoft.com/en-us/help/2977003/the-latest-supported-visual-c-downloads).

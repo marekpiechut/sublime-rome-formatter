@@ -18,12 +18,13 @@ __license__ = "Apache 2.0"
 import sublime
 import sublime_plugin
 import subprocess
+import platform
 import os
 
 from os import path
 from sublime import Region, load_settings, expand_variables
 
-
+WINDOWS = platform.system() == 'Windows'
 settings = load_settings('RomeFormatter.sublime-settings')
 
 supported_scopes = (
@@ -86,6 +87,7 @@ class RomeFormatCommand(sublime_plugin.TextCommand):
 			stderr=subprocess.PIPE,
 			stdout=subprocess.PIPE,
 			cwd=cwd,
+			shell=WINDOWS
 		)
 
 		encoding = self.view.encoding()
