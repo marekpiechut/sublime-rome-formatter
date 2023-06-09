@@ -25,7 +25,14 @@ from os import path
 from sublime import Region, load_settings, expand_variables
 
 WINDOWS = platform.system() == 'Windows'
-settings = load_settings('RomeFormatter.sublime-settings')
+SETTINGS_FILE = 'RomeFormatter.sublime-settings'
+settings = {}
+
+
+def plugin_loaded():
+	global settings
+	settings = load_settings(SETTINGS_FILE)
+
 
 supported_scopes = (
 	("source.js", ".js"),
