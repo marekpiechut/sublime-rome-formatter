@@ -65,7 +65,7 @@ class RomeFormatCommand(sublime_plugin.TextCommand):
 		if file_name:
 			return os.path.basename(file_name)
 		else:
-			view_main_scope = view.syntax().scope.partition(" ")[0]
+			view_main_scope = self.view.syntax().scope.partition(" ")[0]
 			for scope, ext in supported_scopes:
 				if sublime.score_selector(view_main_scope, scope):
 					return ext
